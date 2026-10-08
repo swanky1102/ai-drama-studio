@@ -1,0 +1,1 @@
+import {Project} from "./types";const KEY="ai-drama-studio-v2";export function loadProject(fallback:Project){if(typeof window==="undefined")return fallback;try{const x=localStorage.getItem(KEY);return x?JSON.parse(x):fallback}catch{return fallback}}export function saveProject(project:Project){if(typeof window!=="undefined")localStorage.setItem(KEY,JSON.stringify(project))}

@@ -1,34 +1,22 @@
-# AI Drama Studio
+# AI Drama Studio v0.2
 
-A production-oriented web studio for building AI-powered drama series.
+A production-style AI writers room built with Next.js, React, TypeScript and Claude.
 
-## Included in v0.1
-- Series dashboard and season overview
-- Character roster with editable profiles
-- Episode board
-- Writers Room with Claude API integration
-- Series Bible / continuity context
-- Local browser persistence
-- Responsive dark cinematic UI
+## What changed
+- Structured project model for characters, episodes, scenes and relationships
+- Professional screenplay editor
+- Claude Writers Room with project context
+- Local continuity engine
+- Character relationship map
+- Series Bible editor
+- Visual development / storyboard prompt board
+- JSON project export and print-ready screenplay mode
+- Browser autosave with localStorage
 
-## Run locally
+## Run
+1. Copy .env.example to .env.local
+2. Add ANTHROPIC_API_KEY
+3. Run npm install
+4. Run npm run dev
 
-npm install
-cp .env.example .env.local
-Add ANTHROPIC_API_KEY to .env.local for live Claude generation.
-npm run dev
-
-Open http://localhost:3000.
-
-## Architecture
-Next.js App Router + React + TypeScript. The UI works without an API key using a safe demo fallback. When ANTHROPIC_API_KEY is configured, /api/generate sends writing requests to Claude.
-
-## Roadmap
-1. Multi-project workspace and database persistence
-2. Structured episode/scene editor
-3. Character relationship graph
-4. Automatic continuity checking
-5. Image generation and visual boards
-6. Voice casting and scene audio
-7. Render/export pipeline
-8. Authentication and cloud sync
+Claude generation is available when the API key is configured.

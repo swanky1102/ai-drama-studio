@@ -1,28 +1,18 @@
-# AI Drama Studio v0.3
+# AI Drama Studio v0.5
 
-AI Drama Studio is a production-style AI writers room built with Next.js, React, TypeScript and Claude.
+Production-style AI writers room built with Next.js, React, TypeScript and Claude.
 
-## v0.3
-- Production screenplay editor
-- Claude Writers Room with structured project context
-- Local continuity engine
-- Character relationship map
-- Series Bible
-- Visual development board
-- Browser autosave
-- Revision snapshots
-- JSON export / print screenplay
-- Optional Supabase cloud persistence API
-- Database schema included in `supabase/schema.sql`
+## v0.5
+- Supabase email/password authentication foundation
+- User-scoped project persistence with RLS
+- Project ownership enforced by authenticated user UUID
+- No service-role key is used by browser code
+- Local browser mode remains available
+- Multi-project workspace, revisions and AI Writers Room from v0.4
 
-## Run locally
-1. Copy `.env.example` to `.env.local`.
-2. Add `ANTHROPIC_API_KEY`.
-3. Optionally add Supabase credentials for cloud persistence.
-4. Run `npm install`.
-5. Run `npm run dev`.
+## Setup
+Copy .env.example to .env.local and set ANTHROPIC_API_KEY, SUPABASE_URL and SUPABASE_ANON_KEY.
 
-Cloud persistence starts with RLS enabled and no public policies. Authentication and user-scoped policies are the next security layer.
+Run supabase/schema.sql in Supabase SQL Editor. Enable Email provider under Supabase Authentication. Then run npm install and npm run dev.
 
-## Direction
-The data model is JSON-first so the same project can move from browser storage to authenticated cloud storage without changing the screenplay model.
+For production, configure the same environment variables in your deployment platform and run npm run build before deployment.

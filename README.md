@@ -1,18 +1,14 @@
-# AI Drama Studio v0.5
+# AI Drama Studio v0.6
 
-Production-style AI writers room built with Next.js, React, TypeScript and Claude.
+Production hardening for the Next.js + React + TypeScript studio.
 
-## v0.5
-- Supabase email/password authentication foundation
-- User-scoped project persistence with RLS
-- Project ownership enforced by authenticated user UUID
-- No service-role key is used by browser code
-- Local browser mode remains available
-- Multi-project workspace, revisions and AI Writers Room from v0.4
+## v0.6
+- Authenticated account state inside the studio.
+- Sign out without losing local projects.
+- Signed-in project hydration from Supabase.
+- Production loading, error and not-found boundaries.
+- /api/health readiness endpoint without secret exposure.
+- Package version 0.6.0.
 
-## Setup
-Copy .env.example to .env.local and set ANTHROPIC_API_KEY, SUPABASE_URL and SUPABASE_ANON_KEY.
-
-Run supabase/schema.sql in Supabase SQL Editor. Enable Email provider under Supabase Authentication. Then run npm install and npm run dev.
-
-For production, configure the same environment variables in your deployment platform and run npm run build before deployment.
+## Deployment
+Set ANTHROPIC_API_KEY, SUPABASE_URL, and SUPABASE_ANON_KEY in the deployment environment. Run supabase/schema.sql once in Supabase, enable email/password authentication, then deploy the Next.js app. Never expose a Supabase service-role key to browser code.

@@ -1,0 +1,2 @@
+"use client";
+export default function Error({error,reset}:{error:Error&{digest?:string};reset:()=>void}){return <main style={{minHeight:"100vh",display:"grid",placeItems:"center",padding:24,background:"#0b0b0f",color:"#fff"}}><section style={{maxWidth:560,textAlign:"center"}}><p style={{opacity:.6}}>AI DRAMA STUDIO</p><h1>Something interrupted the studio.</h1><p style={{opacity:.7}}>{error.message||"An unexpected error occurred."}</p><button onClick={()=>reset()} style={{padding:"12px 18px",borderRadius:10,border:0,cursor:"pointer"}}>Try again</button></section></main>}
